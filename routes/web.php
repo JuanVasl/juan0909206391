@@ -16,3 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+//Formulario Create para Criptomoneda
+Route::get("/criptomoneda/create", "MonedaController@createForm");
+
+//Guardar datos de tabla criptomoneda
+Route::post("/save", "MonedaController@save")->name("save");
