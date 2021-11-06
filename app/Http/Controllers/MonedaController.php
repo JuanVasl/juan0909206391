@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Lenguaje;
 use App\Models\Moneda;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class MonedaController extends Controller
 {
@@ -41,5 +42,17 @@ class MonedaController extends Controller
         ]);
 
         return back()->with('criptomonedaGuardado', "Criptomoneda Guardada");
+    }
+
+    //Read Criptomoneda
+    public function read(){
+        $coins = DB::table('criptomoneda')
+            // Relacion de Lenguaje
+            ->join('lenguaje_programacion', 'criptomoneda.lenguaje_id', '=', 'lenguaje_programacion.id')
+            ->select('criptomoneda.*', 'lenguaje_programacion.descripcion_lenguaje')
+            ->paginate(3);
+
+
+        return view('moneda.readMoneda', compact('coins'));
     }
 }

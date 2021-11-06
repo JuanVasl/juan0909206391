@@ -13,9 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'MonedaController@read');
 
 //Formulario Create para Criptomoneda
 Route::get("/criptomoneda/create", "MonedaController@createForm");
