@@ -34,10 +34,18 @@
                             <td>{{$coin->descripcion}}</td>
                             <td>{{$coin->descripcion_lenguaje}}</td>
                             <td>
-                                <div class="btn-group">
+                                <div>
                                     <a href="{{url('/criptomoneda/update', $coin->id)}}">
                                         <i class="fas fa-pencil-alt btn btn-outline-primary mb-2 mr-2">  Update</i>
                                     </a>
+
+                                    <form action="{{ route('delete', $coin->id) }}" method="POST" class="formulario-eliminar">
+                                        @csrf @method('DELETE')
+                                        <button type="submit" onclick="return confirm('¿Seguro de eliminar el usuario?')" class="btn btn-outline-danger btn-sm">
+                                            <i class="fas fa-trash-alt"> Delete</i>
+                                        </button>
+                                    </form>
+
 
                                 </div>
                             </td>

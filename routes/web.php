@@ -24,5 +24,8 @@ Route::post("/save", "MonedaController@save")->name("save");
 //Formulario para Update de criptomoneda
 Route::get('/criptomoneda/update/{id}','MonedaController@updateForm');
 
-//Modificar Usuario
+//Modificar Criptomoneda
 Route::patch('/edit/{id}','MonedaController@edit')->name('edit');
+
+//Delete Criptomoneda
+Route::delete('/delete/{id}','MonedaController@delete')->name('delete');
