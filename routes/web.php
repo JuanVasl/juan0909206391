@@ -20,3 +20,9 @@ Route::get("/criptomoneda/create", "MonedaController@createForm");
 
 //Guardar datos de tabla criptomoneda
 Route::post("/save", "MonedaController@save")->name("save");
+
+//Formulario para Update de criptomoneda
+Route::get('/criptomoneda/update/{id}','MonedaController@updateForm');
+
+//Modificar Usuario
+Route::patch('/edit/{id}','MonedaController@edit')->name('edit');

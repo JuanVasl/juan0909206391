@@ -34,7 +34,12 @@
                             <td>{{$coin->descripcion}}</td>
                             <td>{{$coin->descripcion_lenguaje}}</td>
                             <td>
+                                <div class="btn-group">
+                                    <a href="{{url('/criptomoneda/update', $coin->id)}}">
+                                        <i class="fas fa-pencil-alt btn btn-outline-primary mb-2 mr-2">  Update</i>
+                                    </a>
 
+                                </div>
                             </td>
                         </tr>
                     @endforeach

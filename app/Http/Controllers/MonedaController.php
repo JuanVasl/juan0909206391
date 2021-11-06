@@ -6,6 +6,7 @@ use App\Models\Lenguaje;
 use App\Models\Moneda;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class MonedaController extends Controller
 {
@@ -54,5 +55,29 @@ class MonedaController extends Controller
 
 
         return view('moneda.readMoneda', compact('coins'));
+    }
+
+    //Formulario para Update criptomoneda
+    public function updateForm($id){
+        $coin = Moneda::findOrFail($id);
+        $lenguaje= Lenguaje::all();
+
+        return view('moneda.updateMoneda', compact('coin', 'lenguaje'));
+    }
+
+    //Edicion de Criptomoneda
+    public function edit(Request $request, $id){
+        $dataCoin = request()->except((['_token','_method']));
+
+        /*Recolecion de la foto de Usuario*/
+        if($request->hasFile('logotipo')){
+            $coin = Moneda::findOrFail($id);
+            Storage::delete('public/'.$coin->logotipo);
+            $dataCoin ['logotipo'] = $request-> file('logotipo')->store('logos','public');
+        }
+
+        Moneda::where('id', '=', $id)->update($dataCoin);
+
+        return redirect('/')->with('editar', 'ok');
     }
 }
