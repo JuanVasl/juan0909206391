@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Lenguaje;
 use App\Models\Moneda;
 use Illuminate\Http\Request;
 
@@ -10,7 +11,8 @@ class MonedaController extends Controller
     //Formulario Create Criptomoneda
     public function createForm(){
 
-        return view('moneda.createMoneda');
+        $lenguaje = Lenguaje::all();
+        return view('moneda.createMoneda', compact('lenguaje'));
     }
 
     //Guardar datos Criptomoneda
@@ -21,6 +23,7 @@ class MonedaController extends Controller
             'nombre' => 'required|string|max:45',
             'precio' => 'required',
             'descripcion'=>'required|string|max:200',
+            'lenguaje' => 'required'
         ]);
 
         //Recoleccion de Logotipo
@@ -34,6 +37,7 @@ class MonedaController extends Controller
             'nombre'=>$validation['nombre'],
             'precio'=>$validation['precio'],
             'descripcion'=> $validation['descripcion'],
+            'lenguaje_id' => $validation['lenguaje']
         ]);
 
         return back()->with('criptomonedaGuardado', "Criptomoneda Guardada");

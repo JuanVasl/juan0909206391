@@ -18,7 +18,7 @@
                     </div>
                 @endif
 
-                <br><br><br>
+                <br><br>
                 <div class="card">
                     <form action="{{ url ('save') }}" method="POST" enctype="multipart/form-data">
                         @csrf
@@ -50,6 +50,17 @@
                             <div class="row form-group">
                                 <label for="" class="col-3">Descripcion</label>
                                 <input type="text" name="descripcion" class="form-control col-md-8">
+                            </div>
+
+                            <div class="row form-group">
+                                <label for="" class="col-3">Lenguaje</label>
+                                <select name="lenguaje" class="form-control col-md-8" >
+                                    <option value="" class="text-center"> Seleccione el Lenguaje </option>
+
+                                    @foreach( $lenguaje as $lenguajes)
+                                        <option value="{{$lenguajes->id}}" class="text-center"> {{$lenguajes->descripcion}}  </option>
+                                    @endforeach
+                                </select>
                             </div>
 
                             <div class="row form-group">
