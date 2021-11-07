@@ -21,9 +21,9 @@ class MonedaController extends Controller
     public function save(Request $request)
     {
         $validation = $this->validate($request, [
-            'logotipo' => 'required',
-            'nombre' => 'required|string|max:45',
-            'precio' => 'required',
+            'logotipo' => 'required|image',
+            'nombre' => 'required|unique:App\Models\Moneda,nombre|string|max:45',
+            'precio' => 'required|numeric',
             'descripcion'=>'required|string|max:200',
             'lenguaje' => 'required'
         ]);
@@ -68,6 +68,7 @@ class MonedaController extends Controller
     //Edicion de Criptomoneda
     public function edit(Request $request, $id){
         $dataCoin = request()->except((['_token','_method']));
+
 
         /*Recolecion de logotipo*/
         if($request->hasFile('logotipo')){

@@ -30,7 +30,7 @@
 
                             <div class="row form-group">
                                 <label for="" class="col-3">Descripcion</label>
-                                <input type="text" name="descripcion" class="form-control col-md-8">
+                                <input type="text" name="descripcion_leng" class="form-control col-md-8">
                             </div>
 
                             <div class="row form-group">

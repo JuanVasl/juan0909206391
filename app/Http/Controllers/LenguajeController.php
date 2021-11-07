@@ -17,14 +17,14 @@ class LenguajeController extends Controller
     public function save(Request $request){
 
         $validator = $this->validate($request, [
-            'descripcion'=> 'required|string|max:45',
+            'descripcion_leng'=> 'required|unique:App\Models\Lenguaje,descripcion_lenguaje|string|max:45',
         ]);
 
         Lenguaje::create([
-            'descripcion_lenguaje'=>$validator['descripcion']
+            'descripcion_lenguaje'=>$validator['descripcion_leng']
         ]);
 
-        return redirect('/')->with('guardar', 'ok');
+        return redirect('/lenguaje/read')->with('guardar', 'ok');
     }
 
     //Read Listado de lenguajes
