@@ -28,8 +28,12 @@ Route::patch('/edit/{id}','MonedaController@edit')->name('edit');
 Route::delete('/delete/{id}','MonedaController@delete')->name('delete');
 
     /* --- |Rutas de Criptomonedas| --- */
+//Listado de Lenguajes
+//Listado de Roles
+Route::get('/lenguaje/read', 'LenguajeController@read');
 //Formulario Create para Criptomoneda
 Route::get("/lenguaje/create", "LenguajeController@createForm");
 //Guardar datos de tabla Lenguaje
 Route::post("/lenguaje/save", "LenguajeController@save")->name("save");
+
 

@@ -27,5 +27,10 @@ class LenguajeController extends Controller
         return redirect('/')->with('guardar', 'ok');
     }
 
+    //Read Listado de lenguajes
+    public function read(){
+        $language['lenguajes'] = Lenguaje::paginate(7);
 
+        return view('lenguaje.readLenguaje', $language);
+    }
 }
