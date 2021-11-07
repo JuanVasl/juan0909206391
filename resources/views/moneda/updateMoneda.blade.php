@@ -31,7 +31,7 @@
                             </div>
 
                             <div class="row form-group">
-                                <label for="" class="col-3">Preico</label>
+                                <label for="" class="col-3">Preico $</label>
                                 <input type="text" name="precio" class="form-control col-md-8" value="{{ $coin->precio }}">
                             </div>
 
@@ -52,8 +52,8 @@
                             </div>
 
                             <div class="row form-group">
-                                <button type="submit" class="btn btn-outline-success col-md-4 offset-2 mr-3">Modificar</button>
-                                <a class="btn btn-outline-danger btn-xs col-md-4" href=" {{ url('/') }}">Cancelar</a>
+                                <button type="submit" class="btn btn-outline-success col-md-4 offset-2 mr-3"><i class="fas fa-save"></i> Guardar Cambios</button>
+                                <a class="btn btn-outline-danger btn-xs col-md-4" href=" {{ url('/') }}"><i class="fas fa-ban"></i> Cancelar</a>
                             </div>
 
                         </div>

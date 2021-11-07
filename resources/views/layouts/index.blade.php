@@ -30,7 +30,6 @@
         }
         .lista .link {
             display: block;
-            color: #000;
             padding: 8px 16px;
             text-decoration: none;
             color: white;
@@ -38,6 +37,11 @@
 
         .lista .link:hover {
             background-color: #555;
+        }
+
+        .footer{
+            text-decoration: none;
+            color: white;
         }
     </style>
 
@@ -51,6 +55,17 @@
         <li class="lista"><a class="link" href="{{ url('/') }}"><i class="fas fa-coins"></i> Criptomoneda</a></li>
         <li class="lista"><a class="link" href="{{ url('/lenguaje/read') }}"><i class="fas fa-laptop-code"></i> Lenguajes</a></li>
         <li class="lista"><a class="link" target="_blank" href="https://github.com/JuanVasl/juan0909206391.git"><i class="fab fa-github"></i> Repositorio</a></li>
+        <br><br><br><br><br><br>
+        <div class="text-center">
+            <img src="https://avatars.githubusercontent.com/u/82298149?v=4" alt="perfil" height="100" class="rounded-circle">
+            <p class="footer">
+                Developer: JuanVas <br>
+                Juan Luis Vásquez <br>
+                0909-20-6391 <br>
+                UMG Puerto Barrios
+            </p>
+        </div>
+
     </ul>
 
     <!-- Secciones de Blade -->

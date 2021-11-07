@@ -23,7 +23,7 @@
                     <form action="{{ url ('/criptomoneda/save') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="card-header text-center text-white bg-info">
-                            <h4>CRIPTOMONEDA</h4>
+                            <h4>CREAR CRIPTOMONEDA</h4>
                         </div>
 
                         <div class="card-body">
@@ -42,7 +42,7 @@
                             </div>
 
                             <div class="row form-group">
-                                <label for="" class="col-3">Precio</label>
+                                <label for="" class="col-3">Precio $</label>
                                 <input type="text" name="precio" class="form-control col-md-8">
                             </div>
 
@@ -63,8 +63,8 @@
                             </div>
 
                             <div class="row form-group">
-                                <button type="submit" class="btn btn-outline-success col-md-4 offset-2 mr-3">Guardar</button>
-                                <a class="btn btn-outline-danger btn-xs col-md-4" href=" {{ url('/') }}">Cancelar</a>
+                                <button type="submit" class="btn btn-outline-success col-md-4 offset-2 mr-3"><i class="fas fa-save"></i> Guardar</button>
+                                <a class="btn btn-outline-danger btn-xs col-md-4" href=" {{ url('/') }}"><i class="fas fa-ban"></i> Cancelar</a>
                             </div>
 
                         </div>

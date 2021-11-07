@@ -34,8 +34,8 @@
                             </div>
 
                             <div class="row form-group">
-                                <button type="submit" class="btn btn-outline-success col-md-4 offset-2 mr-3">Guardar</button>
-                                <a class="btn btn-outline-danger btn-xs col-md-4" href=" {{ url('/lenguaje/read') }}">Cancelar</a>
+                                <button type="submit" class="btn btn-outline-success col-md-4 offset-2 mr-3"><i class="fas fa-save"></i> Guardar</button>
+                                <a class="btn btn-outline-danger btn-xs col-md-4" href=" {{ url('/lenguaje/read') }}"><i class="fas fa-ban"></i> Cancelar</a>
                             </div>
 
                         </div>
