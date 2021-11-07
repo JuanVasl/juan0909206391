@@ -55,7 +55,8 @@
         <li class="lista"><a class="link" href="{{ url('/') }}"><i class="fas fa-coins"></i> Criptomoneda</a></li>
         <li class="lista"><a class="link" href="{{ url('/lenguaje/read') }}"><i class="fas fa-laptop-code"></i> Lenguajes</a></li>
         <li class="lista"><a class="link" target="_blank" href="https://github.com/JuanVasl/juan0909206391.git"><i class="fab fa-github"></i> Repositorio</a></li>
-        <br><br><br><br><br><br>
+        <li class="lista"><a class="link" target="_blank" href="https://youtu.be/LipYgN8Dmjk  "><i class="fab fa-youtube"></i> YouTube</a></li>
+        <br><br><br><br><br>
         <div class="text-center">
             <img src="https://avatars.githubusercontent.com/u/82298149?v=4" alt="perfil" height="100" class="rounded-circle">
             <p class="footer">

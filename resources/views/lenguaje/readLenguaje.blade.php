@@ -86,7 +86,7 @@
             e.preventDefault();
             Swal.fire({
                 title: '¿Estás seguro?',
-                text: "La criptomoneda se eliminara definitivamente",
+                text: "El lenguaje de programacion se eliminara definitivamente",
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',

@@ -27,7 +27,7 @@ Route::patch('/criptomoneda/edit/{id}','MonedaController@edit')->name('edit');
 //Delete Criptomoneda
 Route::delete('/criptomoneda/delete/{id}','MonedaController@delete')->name('deleteCoin');
 
-    /* --- |Rutas de Criptomonedas| --- */
+    /* --- |Rutas de Lenguajes| --- */
 //Listado de Lenguajes
 //Listado de Roles
 Route::get('/lenguaje/read', 'LenguajeController@read');
