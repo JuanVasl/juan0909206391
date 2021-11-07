@@ -13,19 +13,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+    /* --- |Rutas de Criptomonedas| --- */
+//Listado de criptomonedas
 Route::get('/', 'MonedaController@read');
-
 //Formulario Create para Criptomoneda
 Route::get("/criptomoneda/create", "MonedaController@createForm");
-
 //Guardar datos de tabla criptomoneda
 Route::post("/save", "MonedaController@save")->name("save");
-
 //Formulario para Update de criptomoneda
 Route::get('/criptomoneda/update/{id}','MonedaController@updateForm');
-
 //Modificar Criptomoneda
 Route::patch('/edit/{id}','MonedaController@edit')->name('edit');
-
 //Delete Criptomoneda
 Route::delete('/delete/{id}','MonedaController@delete')->name('delete');
+
+    /* --- |Rutas de Criptomonedas| --- */
+//Formulario Create para Criptomoneda
+Route::get("/lenguaje/create", "LenguajeController@createForm");
+//Guardar datos de tabla Lenguaje
+Route::post("/lenguaje/save", "LenguajeController@save")->name("save");
+
