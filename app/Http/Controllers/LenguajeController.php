@@ -41,11 +41,18 @@ class LenguajeController extends Controller
         return view('lenguaje.updateLenguaje', compact( 'lenguajes'));
     }
 
-    //Edicion de Criptomoneda
+    //Edicion de lenguajes
     public function edit(Request $request, $id){
         $dataLeng = request()->except((['_token','_method']));
         Lenguaje::where('id', '=', $id)->update($dataLeng);
 
         return redirect('/lenguaje/read')->with('editar', 'ok');
+    }
+
+    //Delete lenguajes
+    public function delete($id){
+        Lenguaje::destroy($id);
+
+        return back()->with('usuarioEliminado', 'Usuario Eliminado');
     }
 }

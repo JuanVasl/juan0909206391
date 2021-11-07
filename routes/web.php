@@ -39,5 +39,7 @@ Route::post("/lenguaje/save", "LenguajeController@save")->name("save");
 Route::get('/lenguaje/update/{id}','LenguajeController@updateForm');
 //Modificar Lenguaje
 Route::patch('/lenguaje/edit/{id}','LenguajeController@edit')->name('edit');
+//Delete Lenguaje
+Route::delete('/lenguaje/delete/{id}','LenguajeController@delete')->name('delete');
 
 

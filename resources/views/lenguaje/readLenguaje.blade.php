@@ -16,7 +16,7 @@
                     <tr>
                         <th>Id</th>
                         <th>Descripcion</th>
-                        <th>Acciones</th>
+                        <th style="width: 300px">Acciones</th>
                     </tr>
                     </thead>
 
@@ -26,10 +26,17 @@
                             <td>{{$lenguaje->id}}</td>
                             <td>{{$lenguaje->descripcion_lenguaje}}</td>
                             <td>
-                                <div>
+                                <div class="btn-group">
                                     <a href="{{url('/lenguaje/update', $lenguaje->id)}}">
-                                        <i class="fas fa-pencil-alt btn btn-outline-primary mb-2 mr-2">  Update</i>
+                                        <i class="fas fa-pencil-alt btn btn-outline-primary mr-2">  Update</i>
                                     </a>
+
+                                    <form action="{{ url('/lenguaje/delete', $lenguaje->id) }}" method="POST" class="formulario-eliminar">
+                                        @csrf @method('DELETE')
+                                        <button type="submit" onclick="return confirm('¿Seguro de eliminar el usuario?')" class="btn btn-outline-danger btn-sm">
+                                            <i class="fas fa-trash-alt"> Delete</i>
+                                        </button>
+                                    </form>
                                 </div>
                             </td>
                         </tr>
