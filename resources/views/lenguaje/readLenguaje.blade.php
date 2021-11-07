@@ -33,7 +33,7 @@
 
                                     <form action="{{ url('/lenguaje/delete', $lenguaje->id) }}" method="POST" class="formulario-eliminar">
                                         @csrf @method('DELETE')
-                                        <button type="submit" onclick="return confirm('¿Seguro de eliminar el usuario?')" class="btn btn-outline-danger btn-sm">
+                                        <button type="submit" class="btn btn-outline-danger btn-sm">
                                             <i class="fas fa-trash-alt"> Delete</i>
                                         </button>
                                     </form>
@@ -51,4 +51,57 @@
             </div>
         </div>
     </div>
+@endsection
+
+<!-- SweetAlert2 -->
+@section('js')
+    <!--Importamos la libreria -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- Alert Guardar -->
+    @if(session('guardar') == 'ok')
+        <script>
+            Swal.fire(
+                '¡Guardado!',
+                'El lenguaje de programación se guardo con exito',
+                'success'
+            )
+        </script>
+    @endif
+
+    <!-- Alert Modificar -->
+    @if(session('editar') == 'ok')
+        <script>
+            Swal.fire(
+                '¡Modificado!',
+                'El lenguaje de programación se modifico con exito',
+                'success'
+            )
+        </script>
+    @endif
+
+    <!-- Alert Eliminar -->
+    <script>
+        $('.formulario-eliminar').submit(function(e){
+            e.preventDefault();
+            Swal.fire({
+                title: '¿Estás seguro?',
+                text: "La criptomoneda se eliminara definitivamente",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sí, eliminar',
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error...',
+                        text: 'No se puede eliminar el lenguaje, debido a que se esta utilizando',
+                    })
+                }
+            })
+        });
+    </script>
 @endsection

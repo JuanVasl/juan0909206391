@@ -53,6 +53,6 @@ class LenguajeController extends Controller
     public function delete($id){
         Lenguaje::destroy($id);
 
-        return back()->with('usuarioEliminado', 'Usuario Eliminado');
+        return back()->with('eliminar', 'ok');
     }
 }
