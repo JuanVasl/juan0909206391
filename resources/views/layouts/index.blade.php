@@ -26,7 +26,7 @@
             height: 635px;
             background-color: #17202A;
             border: black ;
-            position: absolute;
+            position: fixed;
         }
         .lista .link {
             display: block;
