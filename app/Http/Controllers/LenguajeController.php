@@ -33,4 +33,19 @@ class LenguajeController extends Controller
 
         return view('lenguaje.readLenguaje', $language);
     }
+
+    //Formulario para Update lenguajes
+    public function updateForm($id){
+        $lenguajes = Lenguaje::findOrFail($id);
+
+        return view('lenguaje.updateLenguaje', compact( 'lenguajes'));
+    }
+
+    //Edicion de Criptomoneda
+    public function edit(Request $request, $id){
+        $dataLeng = request()->except((['_token','_method']));
+        Lenguaje::where('id', '=', $id)->update($dataLeng);
+
+        return redirect('/lenguaje/read')->with('editar', 'ok');
+    }
 }

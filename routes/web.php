@@ -35,5 +35,9 @@ Route::get('/lenguaje/read', 'LenguajeController@read');
 Route::get("/lenguaje/create", "LenguajeController@createForm");
 //Guardar datos de tabla Lenguaje
 Route::post("/lenguaje/save", "LenguajeController@save")->name("save");
+//Formulario para Update de Lenguaje
+Route::get('/lenguaje/update/{id}','LenguajeController@updateForm');
+//Modificar Lenguaje
+Route::patch('/lenguaje/edit/{id}','LenguajeController@edit')->name('edit');
 
 
