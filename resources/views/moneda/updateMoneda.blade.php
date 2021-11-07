@@ -8,11 +8,11 @@
             <div class="col-md-7 mt-5 ml-5">
                 <br><br>
                 <div class="card">
-                    <form action="{{ url('edit', $coin->id)}}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ url('/criptomoneda/edit', $coin->id)}}" method="POST" enctype="multipart/form-data">
                         @csrf @method('PATCH')
                         <div class="card-header text-center text-white bg-info">
                             <img src="{{ asset('storage').'/'.$coin->logotipo}}" height="80" style="border-radius: 50%">
-                            <h4>MODIFICAR USUARIO</h4>
+                            <h4>MODIFICAR CRIPTOMONEDA</h4>
                         </div>
 
                         <div class="card-body">
@@ -42,7 +42,7 @@
 
                             <div class="row form-group">
                                 <label for="" class="col-3">Lenguaje</label>
-                                <select name="lenguaje_id" class="form-control col-md-8" value="{{ $coin->lenguaje }}">
+                                <select name="lenguaje_id" class="form-control col-md-8">
                                     <option value="" class="text-center"> Seleccione el Lenguaje </option>
 
                                     @foreach( $lenguaje as $lenguajes)

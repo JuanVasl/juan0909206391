@@ -20,7 +20,7 @@
 
                 <br><br>
                 <div class="card">
-                    <form action="{{ url ('save') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ url ('/criptomoneda/save') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="card-header text-center text-white bg-info">
                             <h4>CRIPTOMONEDA</h4>

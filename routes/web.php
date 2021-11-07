@@ -19,13 +19,13 @@ Route::get('/', 'MonedaController@read');
 //Formulario Create para Criptomoneda
 Route::get("/criptomoneda/create", "MonedaController@createForm");
 //Guardar datos de tabla criptomoneda
-Route::post("/save", "MonedaController@save")->name("save");
+Route::post("/criptomoneda/save", "MonedaController@save")->name("save");
 //Formulario para Update de criptomoneda
 Route::get('/criptomoneda/update/{id}','MonedaController@updateForm');
 //Modificar Criptomoneda
-Route::patch('/edit/{id}','MonedaController@edit')->name('edit');
+Route::patch('/criptomoneda/edit/{id}','MonedaController@edit')->name('edit');
 //Delete Criptomoneda
-Route::delete('/delete/{id}','MonedaController@delete')->name('delete');
+Route::delete('/criptomoneda/delete/{id}','MonedaController@delete')->name('deleteCoin');
 
     /* --- |Rutas de Criptomonedas| --- */
 //Listado de Lenguajes

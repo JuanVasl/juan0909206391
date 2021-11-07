@@ -42,7 +42,7 @@ class MonedaController extends Controller
             'lenguaje_id' => $validation['lenguaje']
         ]);
 
-        return back()->with('criptomonedaGuardado', "Criptomoneda Guardada");
+        return redirect('/')->with('guardar', "ok");
     }
 
     //Read Criptomoneda
@@ -90,7 +90,7 @@ class MonedaController extends Controller
             Moneda::destroy($id);
         }
 
-        return back()->with('criptomonedaEliminado', 'Criptomoneda eliminada');
+        return back()->with('eliminar', 'ok');
     }
 
 }

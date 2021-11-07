@@ -39,9 +39,9 @@
                                         <i class="fas fa-pencil-alt btn btn-outline-primary mb-2 mr-2">  Update</i>
                                     </a>
 
-                                    <form action="{{ route('delete', $coin->id) }}" method="POST" class="formulario-eliminar">
+                                    <form action="{{ url('/criptomoneda/delete', $coin->id) }}" method="POST" class="formulario-eliminar">
                                         @csrf @method('DELETE')
-                                        <button type="submit" onclick="return confirm('¿Seguro de eliminar el usuario?')" class="btn btn-outline-danger btn-sm">
+                                        <button type="submit" class="btn btn-outline-danger btn-sm">
                                             <i class="fas fa-trash-alt"> Delete</i>
                                         </button>
                                     </form>
@@ -61,4 +61,63 @@
             </div>
         </div>
     </div>
+@endsection
+
+<!-- SweetAlert2 -->
+@section('js')
+    <!--Importamos la libreria -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- Alert Guardar -->
+    @if(session('guardar') == 'ok')
+        <script>
+            Swal.fire(
+                '¡Guardado!',
+                'La criptomoneda se guardo con exito',
+                'success'
+            )
+        </script>
+    @endif
+
+    <!-- Alert Modificar -->
+    @if(session('editar') == 'ok')
+        <script>
+            Swal.fire(
+                '¡Modificado!',
+                'La criptomoneda se modifico con exito',
+                'success'
+            )
+        </script>
+    @endif
+
+    <!-- Alert Eliminar -->
+    @if(session('eliminar') == 'ok')
+        <script>
+            Swal.fire(
+                '¡Eliminado!',
+                'La criptomoneda se elimino con exito.',
+                'success'
+            )
+        </script>
+    @endif
+
+    <script>
+        $('.formulario-eliminar').submit(function(e){
+            e.preventDefault();
+            Swal.fire({
+                title: '¿Estás seguro?',
+                text: "La criptomoneda se eliminara definitivamente",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sí, eliminar',
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    this.submit();
+                }
+            })
+        });
+    </script>
 @endsection
